@@ -1,5 +1,5 @@
 resource "aws_instance" "inst" {
-  ami           = "ami-0b4f379183e5706b9"
+  ami           = data.aws_ami.ami.id
   instance_type = var.instance_type
   subnet_id     = var.subnet_id
 }
