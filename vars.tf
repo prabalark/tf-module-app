@@ -1,2 +1,2 @@
 variable "instance_type" {}
-variable "subnet_ids" {}
+variable "subnet_id" {}
