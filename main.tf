@@ -63,7 +63,6 @@ resource "aws_autoscaling_group" "asg" {
       key                 = tag.key
       propagate_at_launch = true
       value               = tag.value
-
     }
   }
 
