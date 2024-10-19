@@ -33,9 +33,7 @@ resource "aws_security_group" "asg" {
     ipv6_cidr_blocks = ["::/0"]
   }
 
-  tags = {
-    Name = "${var.name}-${var.env}-asg"
-  }
+  tags =merge(var.tags, { Name = "${var.name}-asg-${var.env}" })
 }
 
 resource "aws_launch_template" "template" {
@@ -66,4 +64,12 @@ resource "aws_autoscaling_group" "asg" {
     }
   }
 
+}
+
+resource "aws_lb_target_group" "main" {
+  name     = "${var.name}-${var.env}-TG"
+  port     = 80
+  protocol = "HTTP"
+  vpc_id   = var.vpc_id
+  tags     = merge(var.tags, { Name = "${var.name}-alb-${var.env}" })
 }
