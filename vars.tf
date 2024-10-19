@@ -6,7 +6,6 @@ variable "allow_app_cidr" {}
 variable "bastion_cidr" {}
 
 variable "instance_type" {}
-
 variable "subnets" {}
 
 variable "desired_capacity" {}
