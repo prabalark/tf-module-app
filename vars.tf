@@ -1,13 +1,13 @@
+variable "name" {}
+variable "env" {}
+
+variable "vpc_id" {}
+variable "allow_app_cidr" {}
+variable "bastion_cidr" {}
+
 variable "instance_type" {}
 
 variable "subnets" {}
-variable "vpc_id" {}
-variable "allow_app_cidr" {}
-
-variable "env" {}
-variable "bastion_cidr" {}
-
-variable "name" {}
 
 variable "desired_capacity" {}
 variable "max_size" {}
