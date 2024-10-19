@@ -13,3 +13,4 @@ variable "max_size" {}
 variable "min_size" {}
 
 variable "tags" {}
+variable "app_port" {}
