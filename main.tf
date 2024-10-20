@@ -96,7 +96,7 @@ resource "aws_lb_listener_rule" "rule" {
 
 resource "aws_route53_record" "main" {
   zone_id = var.domain_id   # Route53 : Hosted zone ID
-  name    = var.dns_name  # Route53 : record name
+  name    = local.dns_name #var.dns_name  # Route53 : record name
   records = [var.lb_dns_name] # DNS-name in Load balancers [ public & private ]
   type    = "CNAME"  # before we take A rec
   ttl     = 30
