@@ -93,3 +93,11 @@ resource "aws_lb_listener_rule" "rule" {
     }
   }
 }
+
+resource "aws_route53_record" "main" {
+  zone_id = var.domain_id   # Route53 : Hosted zone ID
+  name    = local.dns_name  # Route53 : Hosted zone name
+  records = [var.lb_dns_name] # frnt,cata...
+  type    = "CNAME"  # before we take A rec
+  ttl     = 30
+}
