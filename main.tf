@@ -76,9 +76,9 @@ resource "aws_lb_target_group" "main" {
 }
 
   # To listener adding rules ,
-  # if any touch listener then forward to TG
+  # if we touch listener then forward to TG
 resource "aws_lb_listener_rule" "rule" {
-  listener_arn = var.listener_arn
+  listener_arn = var.listener_arn  # this we get from tf-module-loadbal output.tf
   priority     = var.listener_priority
 
   action {
