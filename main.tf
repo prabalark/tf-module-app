@@ -12,8 +12,8 @@ resource "aws_security_group" "asg" {
   ingress {
     description = "app"
     protocol    = "tcp"
-    from_port   = 8080
-    to_port     = 8080
+    from_port   = var.app_port
+    to_port     = var.app_port
     cidr_blocks = var.allow_app_cidr # sunet_cidrs from internet
   }
 
