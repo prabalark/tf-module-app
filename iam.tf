@@ -42,7 +42,6 @@ resource "aws_iam_role_policy" "ssm-ps-policy" {
           "ssm:GetParameter"
         ],
         "Resource" : concat([var.kms_arn] ,local.resources)
-        ]
       }
     ]
   })
