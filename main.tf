@@ -25,6 +25,14 @@ resource "aws_security_group" "asg" {
     cidr_blocks = var.bastion_cidr #terraform pri-ip address
   }
 
+  ingress {
+    description = "PROMETHEUS"
+    protocol    = "tcp"
+    from_port   = 9100
+    to_port     = 9100
+    cidr_blocks = var.monitor_cidr #terraform pri-ip address
+  }
+
   egress {
     from_port   = 0
     to_port     = 0
