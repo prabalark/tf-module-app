@@ -29,12 +29,12 @@ resource "aws_iam_role_policy" "ssm-ps-policy" {
 
 
   policy = jsonencode({
-    "Version" : "2012-10-17",
-    "Statement" : [
+    "Version": "2012-10-17",
+    "Statement": [
       {
-        "Sid" : "VisualEditor0",
-        "Effect" : "Allow",
-        "Action" : [
+        "Sid": "VisualEditor0",
+        "Effect": "Allow",
+        "Action": [
           "kms:Decrypt",
           "ssm:GetParameterHistory",
           "ssm:GetParametersByPath",
@@ -42,7 +42,11 @@ resource "aws_iam_role_policy" "ssm-ps-policy" {
           "ssm:GetParameter"
         ],
         "Resource" : concat([var.kms_arn] ,local.resources)
+                                 ]
       }
     ]
   })
 }
+
+
+
